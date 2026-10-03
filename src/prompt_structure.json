@@ -1,0 +1,26 @@
+{
+  "product_feature": "International_AI_Address_Localization",
+  "openai_configuration": {
+    "model": "gpt-4o-mini",
+    "temperature": 0.0,
+    "response_format": { "type": "json_object" }
+  },
+  "system_instruction_prompt": "You are a localization and data cleaning engine for an international logistics platform. Your job is to read a non-English, unstructured, or landmark-based address that failed standard vendor database verification, fix formatting mistakes, transliterate non-Latin scripts, and map the text into a clean JSON structure. You must strictly output JSON matching the expected schema. Do not include conversational text or fluff. If you cannot reliably decipher the text, return confidence_score: 0.0.",
+  "simulated_input_failed_payload": {
+    "target_country_iso": "JP",
+    "raw_input_text": "東京都港区六本木６丁目１０−１六本木ヒルズ森タワー"
+  },
+  "expected_structured_output": {
+    "translation_applied": true,
+    "transliteration_script": "Latin_Alphanumeric",
+    "confidence_score": 0.98,
+    "localized_address": {
+      "recipient_country": "JAPAN",
+      "prefecture": "Tokyo",
+      "city": "Minato-ku",
+      "district": "Roppongi",
+      "street_block": "6-10-1",
+      "building_details": "Roppongi Hills Mori Tower"
+    }
+  }
+}
